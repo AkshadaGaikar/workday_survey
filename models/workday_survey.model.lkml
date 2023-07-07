@@ -10,7 +10,13 @@ datagroup: workday_survey_default_datagroup {
 
 persist_with: workday_survey_default_datagroup
 
-#explore: manager_empl_hier {}
+explore: manager_empl_hier {
+  access_filter: {
+    field: manager_id
+    user_attribute: manager_id  #taken from user attribute
+  }
+
+}
 
 explore: survey {
 
