@@ -10,13 +10,7 @@ datagroup: workday_survey_default_datagroup {
 
 persist_with: workday_survey_default_datagroup
 
-explore: manager_empl_hier {
-  access_filter: {
-    field: manager_id
-    user_attribute: manager_id  #taken from user attribute
-  }
-
-}
+#explore: manager_empl_hier {}
 
 explore: survey {
 
@@ -24,5 +18,9 @@ explore: survey {
     type: left_outer
     relationship: many_to_one
     sql_on: ${manager_empl_hier._employee_id}=${survey._employee_id} ;;
+  }
+  access_filter: {
+    field:manager_empl_hier.manager_id
+    user_attribute: manager_id  #taken from user attribute
   }
 }
